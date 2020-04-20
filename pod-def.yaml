@@ -1,15 +1,20 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  creationTimestamp: null
-  labels:
-    run: nginx
-  name: nginx
+  name: baap-ui
 spec:
-  containers:
-  - image: nginx
-    name: nginx
-    resources: {}
-  dnsPolicy: ClusterFirst
-  restartPolicy: Always
-status: {}
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: baap-ui
+  template:
+    metadata:
+      labels:
+        app: baap-ui
+    spec:
+      containers:
+      - image: nginx
+        name: baap-ui
+        ports:
+        - containerPort: 80
