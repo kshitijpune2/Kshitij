@@ -14,7 +14,7 @@ spec:
         app: baap-ui
     spec:
       containers:
-      - image: nginx
+      - image: nginx:1.17
         name: baap-ui
         ports:
         - containerPort: 80
