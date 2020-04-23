@@ -14,7 +14,7 @@ spec:
         app: argodemo-ui
     spec:
       containers:
-      - image: nginx:1.17.10
+      - image: nginx
         name: argodemo-ui
         ports:
         - containerPort: 80
