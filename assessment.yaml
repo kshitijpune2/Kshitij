@@ -20,7 +20,7 @@ spec:
   selector:
     matchLabels:
       app: paytm-assesement
----	  
+---
 apiVersion: v1
 kind: Service
 metadata:
