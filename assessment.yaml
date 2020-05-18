@@ -45,7 +45,7 @@ spec:
     app: paytm-assesement
   template:
     metadata:
-      name: ndejs
+      name: nodejs
       labels:
         app: paytm-assesement
     spec:
