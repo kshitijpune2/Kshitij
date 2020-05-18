@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 
+  labels:
+    app: paytm-assesement
+spec:
+  replicas: 3
+  template:
+    metadata:
+      name: paytm-assesement
+      labels:
+        app: paytm-assesement
+    spec:
+      containers:
+      - name: nodejs
+        image: 000000000000.dkr.ecr.eu-west-2.amazonaws.com/nodejs-test:latest
+		imagePullSecrets:	
+		- name: us-west-2-ecr-registry  		  
+  selector:
+    matchLabels:
+      app: paytm-assesement
+---	  
+apiVersion: v1
+kind: Service
+metadata:
+  name: paytm-assesement
+spec:
+  selector:
+    app: paytm-assesement
+  ports:
+    - port: 80
+      targetPort: 3000
+  type: LoadBalancer
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-internal: "true"  
+---
+apiVersion: v1
+kind: Replicationset
+metadata:
+  name: paytm-assesement
+spec:
+  replicas: 7
+  selector:
+    app: paytm-assesement
+  template:
+    metadata:
+      name: ndejs
+      labels:
+        app: paytm-assesement
+    spec:
+      containers:
+    spec:
+      containers:
+      - name: nodejs
+        image: 000000000000.dkr.ecr.eu-west-2.amazonaws.com/nodejs-test:latest
+		imagePullSecrets:	
+		- name: us-west-2-ecr-registry  
+  selector:
+    matchLabels:
+      app: paytm-assesement
