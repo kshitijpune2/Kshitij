@@ -15,8 +15,8 @@ spec:
       containers:
       - name: nodejs
         image: 000000000000.dkr.ecr.eu-west-2.amazonaws.com/nodejs-test:latest
-		imagePullSecrets:	
-		- name: us-west-2-ecr-registry  		  
+     imagePullSecrets:	
+     - name: us-west-2-ecr-registry  		  
   selector:
     matchLabels:
       app: paytm-assesement
@@ -54,8 +54,8 @@ spec:
       containers:
       - name: nodejs
         image: 000000000000.dkr.ecr.eu-west-2.amazonaws.com/nodejs-test:latest
-		imagePullSecrets:	
-		- name: us-west-2-ecr-registry  
+     imagePullSecrets:	
+     - name: us-west-2-ecr-registry  
   selector:
     matchLabels:
       app: paytm-assesement
