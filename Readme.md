@@ -71,7 +71,8 @@ And use the above created scecret key in your deplyoment as below in the volume 
 It will store the key in the key.json file and will be stored in the /root/ location
 
 4. How do you test how well your infrastructure scales (when many requests come in)?
-We can monitor the Pods scaling in the GKE Dashboard or by checking the deplyoments(kubectl get deplyments <name of the deployment> -n <which namespace>) in that the Ready pods, up-to-date pods and available pods or in the replica set if created check the desired number and the current number and the ready number of the pods.
+We can monitor the Pods scaling in the GKE Dashboard or by checking the deplyoments
+(kubectl get deplyments <name of the deployment> -n <which namespace>) in that the Ready pods, up-to-date pods and available pods or in the replica set if created check the desired number and the current number and the ready number of the pods.
 
 5. How do you provide an SSL certificate for your service?
 Using ingress Service we can do the SSL certificate communication:
